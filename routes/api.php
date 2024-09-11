@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users_controller;
 use App\Http\Controllers\User_administrador_controller;
 use App\Http\Controllers\Permisos_plan_controller;
+use App\Http\Controllers\Permisos_subusuario_controller;
 
 Route::get('/version', function(){
     return "Version de api 1.0";
@@ -22,3 +23,7 @@ Route::post('/login', [User_administrador_controller::class, 'login']);
 //PERMISOS_PLAN______________________________________________________________
 Route::get('/show-permisos-plan/{id}', [Permisos_plan_controller::class, 'show']);
 Route::put('/update-permisos-plan/{id}', [Permisos_plan_controller::class, 'update']);
+
+//PERMISOS SUBUSUARIO____________________________________________---____________
+Route::get('/get-permisos-subusuario/{id}', [Permisos_subusuario_controller::class, 'get']);
+Route::put('update-permisos-subusuario/{id}', [Permisos_subusuario_controller::class, 'update']);
