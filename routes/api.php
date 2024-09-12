@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Area_producto_controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users_controller;
@@ -48,3 +49,8 @@ Route::delete('/delete-sucursal/{id}', [Sucursal_controller::class, 'destroy']);
 Route::get('/get-almacenes/{id_usuario}', [Almacen_controller::class, 'index']);
 Route::post('/create-almacen', [Almacen_controller::class, 'store']);
 Route::put('/update-almacen/{id}', [Almacen_controller::class, 'update']);
+
+//AREA_PRODUCTO_____________________________________________________________________-
+Route::get('/list-areas-productos/{id_usuario}', [Area_producto_controller::class, 'index']);
+Route::post('/create-area-producto', [Area_producto_controller::class, 'store']);
+Route::put('/update-area-producto/{id}', [Area_producto_controller::class, 'update']);
