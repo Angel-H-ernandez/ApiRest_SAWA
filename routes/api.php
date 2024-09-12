@@ -6,6 +6,7 @@ use App\Http\Controllers\Users_controller;
 use App\Http\Controllers\User_administrador_controller;
 use App\Http\Controllers\Permisos_plan_controller;
 use App\Http\Controllers\Permisos_subusuario_controller;
+use App\Http\Controllers\Plan_servicio_controller;
 
 Route::get('/version', function(){
     return "Version de api 1.0";
@@ -27,3 +28,8 @@ Route::put('/update-permisos-plan/{id}', [Permisos_plan_controller::class, 'upda
 //PERMISOS SUBUSUARIO____________________________________________---____________
 Route::get('/get-permisos-subusuario/{id}', [Permisos_subusuario_controller::class, 'get']);
 Route::put('update-permisos-subusuario/{id}', [Permisos_subusuario_controller::class, 'update']);
+
+
+//PLAN SERVICIO ___________________________________________________________________
+Route::get('/get-plan-servicio/{id}', [Plan_servicio_controller::class, 'get']);
+Route::put('update-plan-servicio/{id}', [Plan_servicio_controller::class, 'update']);
