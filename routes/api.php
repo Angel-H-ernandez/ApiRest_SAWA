@@ -8,6 +8,7 @@ use App\Http\Controllers\Permisos_plan_controller;
 use App\Http\Controllers\Permisos_subusuario_controller;
 use App\Http\Controllers\Plan_servicio_controller;
 use App\Http\Controllers\Sucursal_controller;
+use App\Http\Controllers\Almacen_controller;
 
 Route::get('/version', function(){
     return "Version de api 1.0";
@@ -42,3 +43,8 @@ Route::put('/update-sucursal/{id}', [Sucursal_controller::class, 'update']);
 Route::get('/list-sucursal/{id_usuario}', [Sucursal_controller::class, 'index']);
 Route::post('/create-sucursal', [Sucursal_controller::class, 'store']);
 Route::delete('/delete-sucursal/{id}', [Sucursal_controller::class, 'destroy']);
+
+//ALMACEN___________________________________________________________________________________________
+Route::get('/get-almacenes/{id_usuario}', [Almacen_controller::class, 'index']);
+Route::post('/create-almacen', [Almacen_controller::class, 'store']);
+Route::put('/update-almacen/{id}', [Almacen_controller::class, 'update']);
