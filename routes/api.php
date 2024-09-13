@@ -54,3 +54,8 @@ Route::put('/update-almacen/{id}', [Almacen_controller::class, 'update']);
 Route::get('/list-areas-productos/{id_usuario}', [Area_producto_controller::class, 'index']);
 Route::post('/create-area-producto', [Area_producto_controller::class, 'store']);
 Route::put('/update-area-producto/{id}', [Area_producto_controller::class, 'update']);
+
+//AREA_TRABAJADOR
+Route::get('/list-areas-productos/{id_usuario}', [Area_producto_controller::class, 'index']);
+Route::post('/create-area-producto', [Area_producto_controller::class, 'store']);
+Route::put('/update-area-producto/{id}', [Area_producto_controller::class, 'update']);
