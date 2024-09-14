@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Area_producto_controller;
+use App\Http\Controllers\Cliente_controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users_controller;
@@ -66,4 +67,9 @@ Route::put('/update-area-trabajador/{id}', [Area_trabajador_controller::class, '
 Route::get('list-roles-subusuario/{id_usuario}', [Rol_subusuario_controller::class, 'index']);
 Route::post('/create-rol-subusuario', [Rol_subusuario_controller::class, 'store']);
 Route::put('update-rol-subusuario/{id}', [Rol_subusuario_controller::class, 'update']);
+
+//CLIENTEs
+Route::get('/list-clientes/{id_usuario}', [Cliente_controller::class, 'index']);
+Route::post('/create-cliente', [Cliente_controller::class, 'store']);
+Route::put('/update-cliente/{id}', [Cliente_controller::class, 'update']);
 
