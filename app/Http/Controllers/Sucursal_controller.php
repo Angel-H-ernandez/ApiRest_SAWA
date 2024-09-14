@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Librerias\Validar_usuario;
 use App\Models\Sucursal_model;
 use Illuminate\Http\Request;
 
@@ -9,9 +10,19 @@ class Sucursal_controller extends Controller
 {
     //
     public function index($id_usuario){
+
+        $permiso = Validar_usuario::isUsuarioActivo($id_usuario);
+        if(!$permiso){
+            $data = [
+                'message' => "usuario no autorizado",
+                'status' => 403,
+            ];
+            return response()->json($data, 403);
+        }
+
         $sucursales = Sucursal_model::where('id_usuario', $id_usuario)->get();
 
-        if(!$sucursales){
+        if($sucursales->isEmpty()){
             $datos = [
                 "mensaje" => "No se encontraron registros",
                 "status" => 404

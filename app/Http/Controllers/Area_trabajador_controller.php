@@ -31,7 +31,7 @@ class Area_trabajador_controller extends Controller
             'nombre' => 'required|string|max:255',
             'id_usuario' => 'required|integer',
             'id_sucursal' => 'required|integer',
-            'id_almacen' => 'required|integer',
+
         ]);
         if($validator->fails()){
             return response()->json($validator->errors()->toJson(),400);
@@ -41,7 +41,7 @@ class Area_trabajador_controller extends Controller
             'nombre' => $request->get('nombre'),
             'id_usuario' => $request->id_usuario,
             'id_sucursal' => $request->id_sucursal,
-            'id_almacen' => $request->id_almacen
+
 
         ]);
 

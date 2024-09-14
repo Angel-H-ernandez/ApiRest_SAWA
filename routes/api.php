@@ -10,6 +10,8 @@ use App\Http\Controllers\Permisos_subusuario_controller;
 use App\Http\Controllers\Plan_servicio_controller;
 use App\Http\Controllers\Sucursal_controller;
 use App\Http\Controllers\Almacen_controller;
+use App\Http\Controllers\Area_trabajador_controller;
+use App\Http\Controllers\Rol_subusuario_controller;
 
 Route::get('/version', function(){
     return "Version de api 1.0";
@@ -55,7 +57,13 @@ Route::get('/list-areas-productos/{id_usuario}', [Area_producto_controller::clas
 Route::post('/create-area-producto', [Area_producto_controller::class, 'store']);
 Route::put('/update-area-producto/{id}', [Area_producto_controller::class, 'update']);
 
-//AREA_TRABAJADOR
-Route::get('/list-areas-productos/{id_usuario}', [Area_producto_controller::class, 'index']);
-Route::post('/create-area-producto', [Area_producto_controller::class, 'store']);
-Route::put('/update-area-producto/{id}', [Area_producto_controller::class, 'update']);
+//AREA_TRABAJADOR________________________________________________
+Route::get('/list-areas-trabajador/{id_usuario}', [Area_trabajador_controller::class, 'index']);
+Route::post('/create-area-trabajador', [Area_trabajador_controller::class, 'store']);
+Route::put('/update-area-trabajador/{id}', [Area_trabajador_controller::class, 'update']);
+
+//ROL_SUBUSUARIO______________________________________________
+Route::get('list-roles-subusuario/{id_usuario}', [Rol_subusuario_controller::class, 'index']);
+Route::post('/create-rol-subusuario', [Rol_subusuario_controller::class, 'store']);
+Route::put('update-rol-subusuario/{id}', [Rol_subusuario_controller::class, 'update']);
+
