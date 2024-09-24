@@ -15,7 +15,7 @@ use App\Http\Controllers\Area_trabajador_controller;
 use App\Http\Controllers\Rol_subusuario_controller;
 
 Route::get('/version', function(){
-    return "Version de api 1.0";
+    return "api 1.0";
 });
 
 //USERS____________________________________________________________________
@@ -67,7 +67,7 @@ Route::get('list-roles-subusuario/{id_usuario}', [Rol_subusuario_controller::cla
 Route::post('/create-rol-subusuario', [Rol_subusuario_controller::class, 'store']);
 Route::put('update-rol-subusuario/{id}', [Rol_subusuario_controller::class, 'update']);
 
-//CLIENTEs
+//CLIENTES____________________________________________________________________
 Route::get('/list-clientes/{id_usuario}', [Cliente_controller::class, 'index']);
 Route::post('/create-cliente', [Cliente_controller::class, 'store']);
 Route::put('/update-cliente/{id}', [Cliente_controller::class, 'update']);

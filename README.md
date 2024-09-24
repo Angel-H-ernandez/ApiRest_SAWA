@@ -1,5 +1,12 @@
 # End Points
 
+<style>
+h1 {
+  color: #62ff7b;
+}
+</style>
+
+
 ### Obtner la version de api que esta trabajando
 ``/version``
 
